@@ -1,5 +1,8 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; TODO(Austin): Migrate to emacs 27 when this is fixed?
+;; https://github.com/hlissner/doom-emacs/issues/1170
+
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
@@ -110,3 +113,6 @@
 (setq gofmt-command "goimports")
 (setq gofmt-args '("-local" "liftoff/"))
 (add-hook 'before-save-hook 'gofmt-before-save)
+
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 200)
