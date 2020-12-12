@@ -103,6 +103,10 @@
 (sync-env)
 
 (setq projectile-project-search-path "${REPOS}/liftoff/")
+
+; Cider config (for my packages)
+; (setq cider-required-middleware-version "0.25.5")
+; (setq cider-inject-dependencies-at-jack-in nil)
 (setq cider-clojure-cli-global-options "-A:liftoff:dev:nrepl")
 
 ;; Enable formatting on save
@@ -117,3 +121,6 @@
 ;; Increase size of recentf
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 200)
+
+; Use diff-hl-mode always
+(global-diff-hl-mode)
