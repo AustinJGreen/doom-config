@@ -124,3 +124,15 @@
 
 ; Use diff-hl-mode always
 (global-diff-hl-mode)
+
+; Use centaur tabs mode
+(map! :leader
+      :desc "Go to left tab"
+      "<left>" #'centaur-tabs-backward)
+
+(map! :leader
+      :desc "Go to right tab"
+      "<right>" #'centaur-tabs-forward)
+(setq centaur-tabs-height 16)
+(setq centaur-tabs-set-close-button nil)
+(centaur-tabs-mode)
