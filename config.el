@@ -89,3 +89,4 @@
 
 ; Enable centuar mode by default
 (centaur-tabs-mode)
+
