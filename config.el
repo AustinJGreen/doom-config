@@ -70,7 +70,6 @@
 
 (sync-env)
 
-
 ;; Enable formatting on save
 (load! "$REPOS/liftoff/exp/emacs/cljfmt.el")
 (add-hook 'before-save-hook 'cljfmt-before-save)
