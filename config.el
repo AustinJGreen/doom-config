@@ -19,8 +19,8 @@
       ; (setq cider-inject-dependencies-at-jack-in nil)
       cider-clojure-cli-global-options "-A:liftoff:dev:nrepl"
       ;; Increase size of recentf
-      recentf-max-menu-items 25
-      recentf-max-saved-items 200
+      recentf-max-menu-items 2000
+      recentf-max-saved-items 2000
       projectile-project-search-path "${REPOS}/liftoff/"
       centaur-tabs-height 16
       centaur-tabs-set-close-button nil)

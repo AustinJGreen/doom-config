@@ -47,3 +47,8 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! mustache-mode)
+
+(use-package! mustache-mode
+  :mode "\\.mustache$")
