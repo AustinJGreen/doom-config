@@ -8,6 +8,7 @@
 
 (setq user-full-name "Austin Green"
       user-mail-address "agreen@liftoff.io"
+      doom-big-font-increment 2
       doom-theme 'doom-outrun-electric
       org-directory "~/org/"
       display-line-numbers-type nil
@@ -15,15 +16,15 @@
       gofmt-command "goimports"
       gofmt-args '("-local" "liftoff/")
       ; Cider config (for my packages)
-      ; (setq cider-required-middleware-version "0.25.5")
-      ; (setq cider-inject-dependencies-at-jack-in nil)
       cider-clojure-cli-global-options "-A:liftoff:dev:nrepl"
       ;; Increase size of recentf
       recentf-max-menu-items 2000
       recentf-max-saved-items 2000
       projectile-project-search-path "${REPOS}/liftoff/"
-      centaur-tabs-height 16
-      centaur-tabs-set-close-button nil)
+      global-whitespace-mode t
+      ;; Spaces > Tabs. Use 2 spaces for tabs in JS.
+      indent-tabs-mode nil
+      js-indent-level 2)
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
@@ -51,6 +52,7 @@
       :desc "Switch window up"
       "w <up>" #'evil-window-up)
 
+; I slip <Shift>+w and q too often.
 (evil-ex-define-cmd "W" #'evil-write)
 (evil-ex-define-cmd "Q" #'evil-quit)
 
@@ -70,10 +72,11 @@
 
 (sync-env)
 
-;; Enable formatting on save
+; Enable formatting on save
 (load! "$REPOS/liftoff/exp/emacs/cljfmt.el")
 (add-hook 'before-save-hook 'cljfmt-before-save)
 (add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
 
 ; Use diff-hl-mode always
 (global-diff-hl-mode)
@@ -87,6 +90,11 @@
       :desc "Go to right tab"
       "<right>" #'centaur-tabs-forward)
 
-; Enable centuar mode by default
-(centaur-tabs-mode)
+; Clojure productivity
+(map! :leader "a r" #'paredit-wrap-sexp)
+(map! :leader "a t" #'paredit-split-sexp)
 
+; Enable centuar mode by default
+; (centaur-tabs-mode)
+
+; TODO(Austin): Make own theme.

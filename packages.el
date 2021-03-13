@@ -49,6 +49,11 @@
 ;(unpin! t)
 
 (package! mustache-mode)
-
 (use-package! mustache-mode
   :mode "\\.mustache$")
+
+(package! protobuf-mode)
+(use-package! protobuf-mode
+  :mode "\\.proto$")
+
+(package! prettier-js)
