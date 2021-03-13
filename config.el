@@ -81,6 +81,9 @@
 ; Use diff-hl-mode always
 (global-diff-hl-mode)
 
+; Check for spelling mistakes
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 ; Use centaur tabs mode
 (map! :leader
       :desc "Go to left tab"
@@ -94,7 +97,7 @@
 (map! :leader "a r" #'paredit-wrap-sexp)
 (map! :leader "a t" #'paredit-split-sexp)
 
-; Enable centuar mode by default
+; Enable centaur mode by default
 ; (centaur-tabs-mode)
 
 ; TODO(Austin): Make own theme.
